@@ -1,7 +1,7 @@
 oppwamobile_version = '5.1.0'
 
 Pod::Spec.new do |s|
-  s.name                   = 'oppwamobile'
+  s.name                   = 'hyperpay_sdk'
   s.version                = oppwamobile_version
   s.summary                = 'A replica OPPWAMobile podspec.'
   s.description            = 'A replica OPPWAMobile podspec that provides pre-compiled binaries/frameworks instead.'
