@@ -1,13 +1,4 @@
-//
-// Copyright (c) $$year$$ by ACI Worldwide, Inc.
-// All rights reserved.
-//
-// This software is the confidential and proprietary information
-// of ACI Worldwide Inc ("Confidential Information"). You shall
-// not disclose such Confidential Information and shall use it
-// only in accordance with the terms of the license agreement
-// you entered with ACI Worldwide Inc.
-//
+//  © Copyright ACI Worldwide, Inc. 2018, 2025
 
 @import Foundation;
 @class OPPThreeDSSchemeConfig;
@@ -18,6 +9,8 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSInteger, OPPThreeDS2Flow) {
     /// 3-D Secure 2 native application flow.
     OPPThreeDS2FlowApp,
+    /// 3-D Secure 2 native application flow with fallback to browsed flow disabled
+    OPPThreeDS2FlowAppOnly,
     /// 3-D Secure 2 native browser flow.
     OPPThreeDS2FlowWeb,
     /// Fallback to  3-D Secure 1 flow.
@@ -65,7 +58,8 @@ typedef NS_ENUM(NSInteger, OPPThreeDS2Status) {
 /**
  Protocol version of 3-D Secure 2.
  */
-@property (nonatomic, copy, readonly, nullable) NSString *protocolVersion;
+/// TODO:- Needs to make it readonly again
+@property (nonatomic, copy, readwrite, nullable) NSString *protocolVersion;
 
 /**
  3-D Secure 2 integration flow.
@@ -90,17 +84,20 @@ typedef NS_ENUM(NSInteger, OPPThreeDS2Status) {
 /**
  The callback URL string to send the params needed for 3-D Secure 2 authentication request.
  */
-@property (nonatomic, copy, readonly, nullable) NSString *callbackURL;
+/// TODO:- Needs to make it readonly again
+@property (nonatomic, copy, readwrite, nullable) NSString *callbackURL;
 
 /**
  The challenge completion callback URL string to inform Mastercard Payment Gateway Services that the challenge has been completed.
  */
-@property (nonatomic, copy, readonly, nullable) NSString *challengeCompletionCallbackUrl;
+/// TODO:- Needs to make it readonly again
+@property (nonatomic, copy, readwrite, nullable) NSString *challengeCompletionCallbackUrl;
 
 /**
  Text provided by the ACS/Issuer to Cardholder during a Frictionless or Decoupled transaction.
  */
-@property (nonatomic, copy, readonly, nullable) NSString *cardHolderInfo;
+/// TODO:- Needs to make it readonly again
+@property (nonatomic, copy, readwrite, nullable) NSString *cardHolderInfo;
 
 /// @name Initialization
 
@@ -130,6 +127,21 @@ typedef NS_ENUM(NSInteger, OPPThreeDS2Status) {
  @return `YES` if in-app challenge is required, otherwise `NO`.
  */
 - (BOOL)isChallengeRequired;
+
+/// :nodoc:
+- (void)updateThreeDSFlow:(OPPThreeDS2Flow)flow;
+
+/// :nodoc:
+- (void)updateThreeDSConfig:(nullable OPPThreeDSSchemeConfig*)config;
+
+/// :nodoc:
+- (void)updateAuthStatus:(OPPThreeDS2Status)authStatus;
+
+/// :nodoc:
+- (void)updateAuthResponse:(nullable NSString*)authResponse;
+
+/// :nodoc:
++ (OPPThreeDS2Status)authStatusFromString:(nonnull NSString *)statusString;
 
 @end
 

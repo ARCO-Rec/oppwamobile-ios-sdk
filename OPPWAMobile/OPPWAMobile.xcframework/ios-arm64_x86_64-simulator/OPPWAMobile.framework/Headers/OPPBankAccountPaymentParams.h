@@ -1,13 +1,4 @@
-//
-// Copyright (c) $$year$$ by ACI Worldwide, Inc.
-// All rights reserved.
-//
-// This software is the confidential and proprietary information
-// of ACI Worldwide Inc ("Confidential Information"). You shall
-// not disclose such Confidential Information and shall use it
-// only in accordance with the terms of the license agreement
-// you entered with ACI Worldwide Inc.
-//
+//  © Copyright ACI Worldwide, Inc. 2018, 2025
 
 #import "OPPPaymentParams.h"
 
@@ -52,8 +43,9 @@ NS_ASSUME_NONNULL_BEGIN
                                                             error:(NSError * _Nullable __autoreleasing *)error;
 
 /**
- Creates an object representing an IDEAL transaction.
+ Creates an object representing an IDEAL 1.0 transaction.
  
+ This method is deprecated. Use `idealPaymentParamsWithCheckoutID:country:error:' instead.
  @param checkoutID The checkout ID of the transaction. Must be not `nil` or empty.
  @param bankName The name of the bank which holds the account.
  @param error The error that occurred while validating payment parameters. See code attribute (`OPPErrorCode`) and `NSLocalizedDescription` to identify the reason of failure.
@@ -61,6 +53,18 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (nullable instancetype)idealPaymentParamsWithCheckoutID:(NSString *)checkoutID
                                                  bankName:(NSString *)bankName
+                                                    error:(NSError * _Nullable __autoreleasing *)error __attribute__((deprecated("Use 'idealPaymentParamsWithCheckoutID:country:error:' instead.")));
+
+/**
+ Creates an object representing an IDEAL 2.0 transaction.
+ 
+ @param checkoutID The checkout ID of the transaction. Must be not `nil` or empty.
+ @param country The country code of the bank account in the following format [a-zA-Z]{2} (ISO 3166-1).
+ @param error The error that occurred while validating payment parameters. See code attribute (`OPPErrorCode`) and `NSLocalizedDescription` to identify the reason of failure.
+ @return Returns an object representing an IDEAL transaction, and `nil` if parameters are invalid.
+ */
++ (nullable instancetype)idealPaymentParamsWithCheckoutID:(NSString *)checkoutID
+                                                  country:(NSString *)country
                                                     error:(NSError * _Nullable __autoreleasing *)error;
 
 /**

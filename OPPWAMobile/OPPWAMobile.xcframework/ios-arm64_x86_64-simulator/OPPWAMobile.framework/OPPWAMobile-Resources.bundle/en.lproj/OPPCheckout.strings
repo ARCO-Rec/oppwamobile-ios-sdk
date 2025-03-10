@@ -18,9 +18,13 @@
 "LABEL_SWEDISH" = "Swedish";
 "LABEL_FINNISH" = "Finnish";
 "LABEL_STC_PAY_SELECT_PAYMENT_METHOD" = "Please select your preferred payment method:";
+"LABEL_BLIK_TERMS_AND_CONDITIONS" = "Doing payment, you confirm that you have read the";
+"LABEL_BLIK_REGULATIONS" = "regulations and information obligations of the Przelewy24 website.";
+"LABEL_BLIK_TNC_URL" = "https://www.przelewy24.pl/en/regulations";
 
 /// Messages
 "MESSAGE_PLEASE_WAIT" = "Please wait";
+"FIELD_LABEL_BLIK_PROCESSING" = "Please go to your bank app and complete the payment";
 
 /// Device owner authentication
 "DEVICE_AUTH_REASON" = "To confirm payment";
@@ -53,8 +57,11 @@
 "FIELD_LABEL_COUNTRY_CODE" = "Country Code";
 "FIELD_LABEL_NATIONAL_IDENTIFIER" = "National Identifier";
 "FIELD_LABEL_ACCOUNT_NUMBER" = "Account Number";
+"FIELD_LABEL_ROUTING_NUMBER" = "Routing Number";
 "FIELD_LABEL_ACCOUNT_VERIFICATION" = "Account Verification";
 "FIELD_LABEL_DATE_OF_BIRTH" = "Date of birth";
+"FIELD_LABEL_OTP" = "Enter the code from your bank application";
+"FIELD_LABEL_BLIK_ACCESSIBILITY" = "Please enter your Blik code";
 
 /// Text field placeholders
 "FIELD_PLACEHOLDER_CARD_HOLDER_NAME" = "Name as it appears on card";
@@ -80,6 +87,7 @@
 "FIELD_PLACEHOLDER_POSTCODE" = "Post Code";
 "FIELD_PLACEHOLDER_OPTIONAL" = "(Optional)";
 "FIELD_PLACEHOLDER_DATE_OF_BIRTH" = "DD.MM.YYYY";
+"FIELD_PLACEHOLDER_ROUTING_NUMBER" = "Routing Number";
 
 /// Text field errors
 "FIELD_ERROR_CARD_HOLDER_NAME_INVALID" = "Card holder name is not valid";
@@ -96,10 +104,13 @@
 "FIELD_ERROR_MOBILE_PHONE_INVALID" = "Invalid mobile number";
 "FIELD_ERROR_NATIONAL_IDENTIFIER_INVALID" = "Invalid National Identifier";
 "FIELD_ERROR_ACCOUNT_NUMBER_INVALID" = "Invalid account number";
+"FIELD_ERROR_ROUTING_NUMBER_INVALID" = "Routing Number is not valid";
 "FIELD_ERROR_ACCOUNT_EXPIRY_DATE_INVALID" = "Expiration date is not valid, use MM/YY or MM/YYYY format";
 "FIELD_ERROR_ACCOUNT_EXPIRED" = "Account is expired";
 "FIELD_ERROR_ADDRESS_INVALID" = "Click here for Billing Address";
 "FIELD_ERROR_DATE_OF_BIRTH_INVALID" = "Invalid birth date. DD.MM.YYYY expected";
+"FIELD_ERROR_COUNTY_CODE_INVALID" = "Invalid country code";
+"FIELD_ERROR_BANK_CODE_INVALID" = "Enter 6-digit valid code";
 
 /// Payment method groups are displayed if tokens are received
 "PAYMENT_METHOD_GROUP_STORED" = "Stored Payment Methods";
@@ -123,12 +134,12 @@
 "PAYMENT_METHOD_TYPE_UNIONPAY_SMS" = "UnionPay SMS";
 "PAYMENT_METHOD_TYPE_JCB" = "JCB";
 "PAYMENT_METHOD_TYPE_APPLEPAY" = "Apple Pay";
+"PAYMENT_METHOD_TYPE_APPLEPAYTKN" = "Apple Pay";
 "PAYMENT_METHOD_TYPE_SOFORTUEBERWEISUNG" = "SOFORT BANKING";
 "PAYMENT_METHOD_TYPE_DIRECTDEBIT_SEPA" = "SEPA Direct Debit";
 "PAYMENT_METHOD_TYPE_IDEAL" = "IDEAL";
 "PAYMENT_METHOD_TYPE_PAYPAL" = "PayPal";
 "PAYMENT_METHOD_TYPE_BOLETO" = "BOLETO Bancário";
-"PAYMENT_METHOD_TYPE_ALIPAY" = "Alipay";
 "PAYMENT_METHOD_TYPE_CHINAUNIONPAY" = "UnionPay Online Payment";
 "PAYMENT_METHOD_TYPE_PAYSAFECARD" = "Paysafecard";
 "PAYMENT_METHOD_TYPE_YANDEX" = "Yandex";
@@ -158,3 +169,16 @@
 "PAYMENT_METHOD_TYPE_IKANOOI_FI" = "Ikano Lasku FI";
 "PAYMENT_METHOD_TYPE_IKANOOI_NO" = "Ikano Faktura NO";
 "PAYMENT_METHOD_TYPE_IKANOOI_SE" = "Ikano Faktura SE";
+"PAYMENT_METHOD_TYPE_BLIK" = "BLIK";
+"PAYMENT_METHOD_TYPE_AMAZONPAY" = "Amazon Pay";
+
+/// Accessibility
+"ACCESSIBILITY_SCAN_CARD" = "Scan a card";
+"ACCESSIBILITY_CANCEL_CHECKOUT" = "Cancel checkout";
+"ACCESSIBILITY_PAY_WITH_STORED_PAYMENT_METHOD" = "Pay with stored payment method";
+"ACCESSIBILITY_PAY_WITH" = "Pay with";
+
+/// Card Scanning
+"ALERT_TITLE_CARD_SCANNING_FAILED" = "Card Scanning Failed";
+"LABEL_CARD_SCAN_HOLD_HERE" = "Hold card here.\n It will scan automatically";
+"BUTTON_TITLE_OK" = "OK";
