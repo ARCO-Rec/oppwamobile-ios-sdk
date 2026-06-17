@@ -1,4 +1,4 @@
-oppwamobile_version = '5.1.0'
+oppwamobile_version = '7.11.0'
 
 Pod::Spec.new do |s|
   s.name                   = 'hyperpay_sdk'
